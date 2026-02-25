@@ -47,7 +47,7 @@ export default function SuperAdminDashboard() {
               <div className="space-y-1">
                 <p><span className="text-slate-500">[2026-02-25 16:30:12]</span> <span className="text-blue-400">INFO:</span> System startup routine initiated...</p>
                 <p><span className="text-slate-500">[2026-02-25 16:30:14]</span> <span className="text-blue-400">INFO:</span> Database clusters synchronized.</p>
-                <p><span className="text-slate-500">[2026-02-25 16:30:45]</span> <span className="text-yellow-400">WARN:</span> Node 4 response time > 200ms</p>
+                <p><span className="text-slate-500">[2026-02-25 16:30:45]</span> <span className="text-yellow-400">WARN:</span> Node 4 response time 200ms</p>
                 <p><span className="text-slate-500">[2026-02-25 16:31:02]</span> <span className="text-blue-400">INFO:</span> Weekly backup completed successfully.</p>
                 <p><span className="text-slate-500">[2026-02-25 16:32:15]</span> <span className="text-green-400">SUCCESS:</span> API Gateway integrity check passed.</p>
                 <p className="animate-pulse">_</p>

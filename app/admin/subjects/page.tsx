@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { BookOpen, Search, Filter, Plus, Clock, FileText, ChevronDown } from 'lucide-react';
+import { BookOpen, Search, Filter, Plus, Clock, FileText, ChevronDown, MoreVertical } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function AdminSubjects() {

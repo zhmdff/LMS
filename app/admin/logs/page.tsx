@@ -67,7 +67,7 @@ export default function AdminLogs() {
                      <tr key={log.id} className="hover:bg-slate-50/80 transition-colors">
                         <td className="px-6 py-4 whitespace-nowrap">
                            <div className="flex items-center gap-3">
-                              <history className="h-4 w-4 text-[var(--color-primary)]" />
+                              {/* <history className="h-4 w-4 text-[var(--color-primary)]" /> */}
                               <span className="text-sm font-bold text-slate-900">{log.action}</span>
                            </div>
                         </td>

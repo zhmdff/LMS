@@ -4,6 +4,7 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Settings, Save, Globe, Lock, ShieldCheck, Database, Server, RefreshCw } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function SuperAdminConfig() {
   const settingsGroups = [
