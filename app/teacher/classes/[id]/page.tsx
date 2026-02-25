@@ -680,9 +680,7 @@ export default function TeacherClassDetail() {
                    <thead className="bg-slate-50/50">
                      <tr>
                        <th className="px-6 py-4 text-[9px] font-semibold text-slate-400 uppercase tracking-widest text-left">Student Name</th>
-                       <th className="px-6 py-4 text-[9px] font-semibold text-slate-400 uppercase tracking-widest text-left">Submission Topic</th>
                        <th className="px-6 py-4 text-[9px] font-semibold text-slate-400 uppercase tracking-widest text-center">Points</th>
-                       <th className="px-6 py-4 text-[9px] font-semibold text-slate-400 uppercase tracking-widest text-right px-10">Actions</th>
                      </tr>
                    </thead>
                    <tbody className="divide-y divide-border bg-white text-left">
@@ -690,9 +688,6 @@ export default function TeacherClassDetail() {
                        <tr key={i} className="hover:bg-slate-50 transition-colors">
                          <td className="px-6 py-4 whitespace-nowrap">
                             <span className="text-sm font-medium text-slate-800">{stu.name}</span>
-                         </td>
-                         <td className="px-6 py-4 whitespace-nowrap">
-                            <span className="text-[11px] font-medium text-slate-400">Optimization Research...</span>
                          </td>
                          <td className="px-6 py-4 whitespace-nowrap text-center">
                              <select 
@@ -703,9 +698,6 @@ export default function TeacherClassDetail() {
                                  <option key={i} value={i}>{i}</option>
                                ))}
                              </select>
-                         </td>
-                         <td className="px-6 py-4 whitespace-nowrap text-right px-10">
-                            <Button size="sm" className="h-8 bg-slate-900 text-white font-semibold uppercase text-[9px] tracking-widest px-4">Save</Button>
                          </td>
                        </tr>
                      ))}

@@ -73,7 +73,7 @@ export default function TeacherGradeApproval() {
         </div>
 
         <div className="space-y-6">
-           <Card className="border-border shadow-sm bg-slate-900 text-white overflow-hidden">
+           <Card className="border-border shadow-sm bg-[var(--color-primary)] text-white overflow-hidden">
               <div className="p-6">
                  <div className="flex items-center gap-3 mb-6">
                     <ShieldCheck className="h-8 w-8 text-emerald-400" />

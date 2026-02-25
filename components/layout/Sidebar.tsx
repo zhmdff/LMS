@@ -40,7 +40,6 @@ const sidebarLinks: Record<Role, any[]> = {
   teacher: [
     { name: 'Dashboard', icon: LayoutDashboard, href: '/teacher/dashboard' },
     { name: 'My Classes', icon: GraduationCap, href: '/teacher/classes' },
-    { name: 'Kollekvium', icon: FileText, href: '/teacher/kollekvium' },
     { name: 'Grade Approval', icon: CheckSquare, href: '/teacher/approval' },
     { name: 'Formal Requests', icon: MessageSquare, href: '/teacher/requests' },
     { name: 'Reports', icon: BarChart3, href: '/teacher/reports' },
