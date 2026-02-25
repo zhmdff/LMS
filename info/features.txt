@@ -1,0 +1,329 @@
+University Academic Management System (UAMS)
+1. Project Overview
+UAMS is a centralized academic management platform designed for a single university.The system manages academic structure, student enrollment, curriculum selection, attendance tracking, grading, reporting, and formal academic requests.
+This system is:
+Academic-focused only
+Rule-driven and structured
+Designed for up to 10,000+ users
+Built for real-world university deployment
+Optimized for low-technical-knowledge users
+Strictly role-based
+Non-financial
+Non-HR
+Non-government integrated
+No AI features
+
+
+---
+2. System Objectives
+1. Digitize academic workflows.
+
+2. Enforce strict attendance and grading rules.
+
+3. Standardize curriculum registration.
+
+4. Provide clear teacher dashboards for in-class usage.
+
+5. Enable structured formal request workflows.
+
+6. Generate academic reports.
+
+7. Reduce manual paperwork.
+
+
+
+---
+3. System Boundaries
+Included
+Academic structure management
+Student & teacher management
+Curriculum per semester
+Attendance system (time-based rules)
+Activity and grading system
+Kollekvium (midterm-type grading record)
+Formal request system
+Academic reporting (table-based)
+Internal institutional messaging (formal only)
+
+Explicitly Excluded
+Financial module
+Tuition payments
+HR management
+Payroll
+Dormitory management
+Government system integration
+AI features
+File attachments in requests
+Real-time chat
+Advanced exam engine (Phase 2+)
+Mobile app (future possibility only)
+
+
+---
+4. User Roles
+4.1 Super Admin (IT)
+Full system access
+Configure global rules
+Audit logs
+User control
+
+4.2 University Admin
+Manage faculties & departments
+Approve corrections
+View reports
+Override academic locks (if enabled)
+
+4.3 Faculty / Department Head
+Assign teachers to subjects
+Monitor academic performance
+View attendance & grading stats
+
+4.4 Teacher
+View assigned classes
+Take attendance (time-restricted)
+Enter activity scores
+Create kollekvium entries
+Submit correction letters
+
+4.5 Tutor
+Limited academic view
+Monitoring capabilities
+
+4.6 Student
+Register curriculum each semester
+View attendance
+View grades
+Submit formal requests
+
+
+---
+5. Academic Structure
+The system supports:
+Faculties
+Departments
+Specialties (İxtisas)
+Groups
+Subjects
+Academic Years
+Semesters
+Summer School
+
+Rules:
+Summer school supported.
+Student may freeze semester.
+Student may retake failed subjects in summer or next semester.
+Curriculum is signed each semester.
+Admin can override curriculum selection.
+
+
+---
+6. Curriculum System
+Each semester:
+1. Student selects subjects (including electives).
+
+2. Admin may override selections.
+
+3. Credit limits enforced (configurable).
+
+4. Failed subjects must be retaken.
+
+
+Curriculum is locked after confirmation.
+
+---
+7. Attendance Engine (Core Module)
+This is a strict rule-driven system.
+7.1 Time Logic
+Opens 10 minutes before class start.
+Closes 15 minutes after class start.
+After 15 minutes:
+i.e → can convert to q.b
+q.b → cannot convert to i.e
+
+If teacher does nothing → blank.
+
+7.2 Attendance Status Types
+i.e (iştirak edir)
+q.b (qeyri mövcud)
+q.iş (holiday)
+
+7.3 Academic Rules
+Attendance contributes 10 total points.
+If student absent in 6 lessons → automatic fail.
+Rule is system-enforced.
+Configurable thresholds possible.
+
+7.4 Correction Policy
+Teacher cannot edit after window closes.
+Teacher must submit correction letter inside system.
+Admin approval required.
+Full audit trail maintained.
+
+7.5 Lecture vs Practice
+Lecture may contain multiple groups.
+Practice contains single group.
+Unified attendance screen recommended for multi-group lectures.
+Internally grouped but displayed combined.
+
+
+---
+8. Grading System
+8.1 Structure
+Each subject has:
+Aktivlik balı (Activity)
+Davamiyyət balı (Attendance)
+İmtahan balı
+Kollokvium balı
+Sərbəst iş
+
+Point structure is fixed across university.
+8.2 Activity Scoring
+Teacher assigns 0–10 per lesson.
+System auto-sums.
+Daily approval required.
+Teacher cannot edit past scores.
+Admin audit enabled.
+
+8.3 Kollekvium
+Created by teacher.
+Active for defined period (e.g., 1 week).
+Manually graded.
+Added to subject total.
+
+8.4 Exam
+Often paper-based.
+Results uploaded manually.
+Online exams possible later.
+Not MVP priority.
+
+
+---
+9. Failure Rules
+A student fails a subject if:
+Absent ≥ 6 lessons OR
+Final score below threshold.
+
+System auto-calculates status.
+
+---
+10. Reporting
+Available Reports
+Attendance reports
+Grade distributions
+Subject performance
+Teacher performance
+Group academic stats
+
+Format
+Table-based
+Exportable (PDF/Excel)
+No graphical dashboards in MVP
+
+
+---
+11. Formal Request System
+Structured request types:
+Grade correction request
+Attendance correction request
+Administrative academic request
+Subject registration override
+
+Rules:
+No attachments
+Fully archived
+Status tracking (Pending / Approved / Rejected)
+No chat
+Internal only
+
+
+---
+12. Messaging
+Not chat-based.
+Only formal institutional request flows.
+
+---
+13. Non-Functional Requirements
+13.1 Usability
+Extremely simple UI
+Minimal clicks
+Large buttons (smart board compatible)
+Clear language
+No complex navigation
+
+13.2 Performance
+Must handle 10,000+ users.
+Concurrent attendance operations.
+No system lag during class start peak hours.
+
+13.3 Security
+Strict role-based access.
+Audit logging.
+Attendance & grade immutability.
+Admin override tracking.
+
+
+---
+14. 3-Month MVP Scope
+Must Include
+Role system
+Academic structure setup
+Group & subject creation
+Teacher dashboard
+Attendance engine
+Activity scoring
+Kollekvium entry
+Curriculum registration
+Fail-by-absence automation
+Formal request system
+Reporting export
+
+Excluded from MVP
+Online exam engine
+Library system
+Mobile app
+Advanced analytics
+AI
+Custom report builder
+Government integration
+
+
+---
+15. Phase 2 (Future)
+Online exam module
+Question bank
+Library system
+Classroom management
+GPA analytics
+Advanced reporting
+Possible mobile app
+
+
+---
+16. Risk Areas
+1. Time-based attendance logic complexity.
+
+2. Audit trail enforcement.
+
+3. Multi-group lecture UX.
+
+4. Curriculum locking logic.
+
+5. Fail automation reliability.
+
+6. Manual correction workflow load.
+
+
+These must be architected carefully before coding.
+
+---
+17. System Philosophy
+This is a:
+Regulation-enforcing academic control systemNOT
+Flexible free-edit academic tool
+
+Rules drive the system.Human correction goes through formal workflow.
+
+---
+18. Final Project Identity
+This system is:
+A strict, rule-based, attendance-driven, semester-structured academic management platform built for a single university with up to 10,000 users, optimized for real classroom use and administrative control.

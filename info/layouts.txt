@@ -1,0 +1,491 @@
+No registration exists.
+
+Users are pre-created by admin.
+
+Login only → role-based redirect → role-based layout.
+
+---
+
+# 1. Authentication Model
+
+## No Registration
+
+- Users are created by Admin.
+- Login only (username + password).
+- On login:
+    - System detects role.
+    - Redirects to role-specific layout.
+    - User cannot switch roles.
+
+---
+
+# 2. Layout Architecture Overview
+
+Each role has a separate layout structure:
+
+1. Student Layout
+2. Teacher Layout
+3. Department Head Layout
+4. University Admin Layout
+5. Super Admin Layout
+6. Tutor Layout (limited)
+
+Each layout contains:
+
+- Top bar
+- Sidebar
+- Main content
+- Notifications (system alerts only)
+
+---
+
+# 3. Student Layout
+
+## Layout Structure
+
+### Top Bar
+
+- University logo
+- Student name
+- Academic year
+- Notification icon
+- Logout
+
+### Sidebar
+
+1. Dashboard
+2. My Curriculum
+3. My Classes
+4. Grades
+5. Attendance
+6. Formal Requests
+7. Academic History
+
+---
+
+## Student Pages (Detailed)
+
+### 3.1 Dashboard
+
+Shows:
+
+- Active semester
+- Current GPA (if enabled)
+- Attendance warning indicator
+- Subjects at risk (absent ≥ 4)
+- Quick link to active subjects
+
+---
+
+### 3.2 My Curriculum
+
+Current semester:
+
+- Selected subjects
+- Credits
+- Status (Approved / Pending)
+- Total credits
+- Retake subjects
+
+Past semesters:
+
+- Archived curriculum list
+
+---
+
+### 3.3 My Classes
+
+Two tabs:
+
+### Active Classes
+
+- Subject name
+- Teacher
+- Attendance count
+- Activity score
+- Current total score
+- Fail risk indicator
+
+### Past Classes
+
+- Final grade
+- Status (Passed / Failed)
+
+Clicking a subject opens:
+
+Subject Detail Page:
+
+Tabs:
+
+- Overview
+- Attendance
+- Scores
+- Kollekvium
+- Final Grade
+
+---
+
+### 3.4 Grades
+
+Table view:
+
+Columns:
+
+- Subject
+- Activity
+- Attendance
+- Kollekvium
+- Exam
+- Total
+- Status
+
+Filter by:
+
+- Semester
+- Academic year
+
+Export button (PDF)
+
+---
+
+### 3.5 Attendance
+
+Detailed breakdown per subject:
+
+- Total lessons
+- i.e count
+- q.b count
+- q.iş count
+- Absence risk counter
+
+Visual indicator if close to 6 absences.
+
+---
+
+### 3.6 Formal Requests
+
+Create new request:
+
+Request types:
+
+- Attendance correction
+- Grade review
+- Curriculum issue
+- Administrative academic issue
+
+Fields:
+
+- Subject (optional)
+- Description
+- Submit
+
+List view:
+
+- Status
+- Date
+- Resolution
+
+---
+
+### 3.7 Academic History
+
+- All past semesters
+- All past subjects
+- Final status
+- GPA per semester (optional)
+
+---
+
+# 4. Teacher Layout
+
+## Layout Structure
+
+### Top Bar
+
+- Teacher name
+- Department
+- Notification icon
+- Logout
+
+### Sidebar
+
+1. Dashboard
+2. My Classes
+3. Attendance
+4. Activity Scores
+5. Kollekvium
+6. Grade Approval
+7. Formal Requests
+8. Reports
+
+---
+
+## Teacher Pages (Detailed)
+
+### 4.1 Dashboard
+
+- Today’s schedule
+- Upcoming classes
+- Pending approvals
+- Students at risk
+- Correction requests pending
+
+---
+
+### 4.2 My Classes
+
+Active semester only:
+
+Each class shows:
+
+- Subject
+- Group(s)
+- Schedule time
+- Student count
+
+Click → Class Detail Page
+
+---
+
+### 4.3 Attendance (Core Page)
+
+If current time within:
+
+- 10 minutes before class
+- 15 minutes after class start
+
+Attendance automatically available.
+
+Screen shows:
+
+If Lecture:
+
+- Combined list of all groups
+
+If Practice:
+
+- Single group list
+
+Columns:
+
+- Student name
+- Status dropdown (i.e / q.b / q.iş)
+
+Rules enforced automatically.
+
+After time window:
+
+- Screen locked.
+
+If mistake:
+
+- “Submit Correction Letter” button.
+
+---
+
+### 4.4 Activity Scores
+
+Select:
+
+- Subject
+- Lesson date
+
+Student list appears.
+
+Enter:
+
+- 0–10 points
+
+Submit → Daily approval required.
+
+Cannot edit after approval.
+
+---
+
+### 4.5 Kollekvium
+
+Create kollekvium:
+
+- Title
+- Start date
+- End date
+- Max score
+
+Enter student scores manually.
+
+---
+
+### 4.6 Grade Approval
+
+Daily approvals list:
+
+- Attendance entries
+- Activity entries
+
+Approve → Locked permanently.
+
+---
+
+### 4.7 Formal Requests
+
+View requests assigned to teacher:
+
+- Grade review
+- Attendance issue
+
+Respond:
+
+- Approve
+- Reject
+- Add note
+
+---
+
+### 4.8 Reports
+
+Teacher-specific:
+
+- Attendance distribution
+- Grade distribution
+- Student performance list
+
+Exportable tables only.
+
+---
+
+# 5. Department Head Layout
+
+Sidebar:
+
+1. Dashboard
+2. Subjects
+3. Assign Teachers
+4. Groups
+5. Curriculum Management
+6. Academic Monitoring
+7. Reports
+
+---
+
+## Department Capabilities
+
+- Assign teacher to subject
+- View attendance stats
+- View grade stats
+- Monitor fail rates
+- No editing teacher scores
+- Cannot override without admin
+
+---
+
+# 6. University Admin Layout
+
+Sidebar:
+
+1. Dashboard
+2. Faculties
+3. Departments
+4. Specialties
+5. Groups
+6. Subjects
+7. Academic Years
+8. User Management
+9. Attendance Rule Config
+10. Reports
+11. Correction Requests
+12. System Logs
+
+---
+
+## Admin Controls
+
+- Create users
+- Assign roles
+- Configure attendance rules:
+    - Grace period
+    - Absence fail threshold
+- Approve correction letters
+- Override academic locks
+- View audit logs
+- Export global reports
+
+---
+
+# 7. Super Admin Layout
+
+Everything admin has PLUS:
+
+- System configuration
+- Backup management
+- Security logs
+- Permission rule editing
+- Database integrity tools
+
+---
+
+# 8. Tutor Layout
+
+Limited version:
+
+- View assigned groups
+- Monitor attendance
+- View grades
+- Cannot edit
+
+---
+
+# 9. Page Flow Summary
+
+Login → Role Detection → Redirect:
+
+Student → /student/dashboard
+
+Teacher → /teacher/dashboard
+
+Department → /department/dashboard
+
+Admin → /admin/dashboard
+
+Super Admin → /superadmin/dashboard
+
+Each layout isolated.
+
+No cross-access.
+
+---
+
+# 10. UX Rules
+
+- Large buttons
+- Clear labels
+- Minimal nesting
+- No complex modals
+- Smart board friendly
+- No unnecessary animations
+
+---
+
+# 11. System Lock Philosophy
+
+After approval:
+
+- No direct edits.
+- Only correction request flow.
+- Full audit history.
+
+This ensures academic integrity.
+
+---
+
+# 12. Final Structural Identity
+
+Your system now contains:
+
+- 6 isolated layouts
+- 40+ structured pages
+- Time-enforced attendance engine
+- Locked grading workflow
+- Semester-based curriculum control
+- Rule-configurable academic enforcement
+
+---

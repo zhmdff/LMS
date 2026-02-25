@@ -1,0 +1,11 @@
+"use client";
+
+import { MainLayout } from "@/components/layout/MainLayout";
+
+export default function StudentLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <MainLayout role="student">{children}</MainLayout>;
+}
